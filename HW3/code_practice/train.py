@@ -12,10 +12,10 @@ def main():
 	#TODO 5: Adjust these parameters if needed
 	#Parameters that can be modified
 	#----------------------------
-	n_env          = 8 #多少個 env 就是幾個 minibatch updat
+	n_env          = 8  
 	n_step         = 128 
-	sample_mb_size = 64 #minibatc size
-	sample_n_epoch = 4 #四次mb的opt
+	sample_mb_size = 64 
+	sample_n_epoch = 4  
 	a_std          = 0.5
 	lamb           = 0.95
 	gamma          = 0.99
