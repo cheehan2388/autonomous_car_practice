@@ -32,7 +32,6 @@ class PPO:
 
 	#Train PPO
 	def train(self, mb_states, mb_actions, mb_old_values, mb_advs, mb_returns, mb_old_a_logps):
-		''''''
 		mb_states      = torch.from_numpy(mb_states).to(self.device)
 		mb_actions     = torch.from_numpy(mb_actions).to(self.device)
 		mb_old_values  = torch.from_numpy(mb_old_values).to(self.device)
@@ -61,15 +60,11 @@ class PPO:
 				v_loss2     = (sample_returns - v_pred_clip).pow(2)
 				v_loss      = torch.max(v_loss1, v_loss2).mean()
 
-				
 				#TODO 4: Policy gradient loss for PPO
-				beta  = 0.01
-				ratio = torch.exp(sample_a_logps - sample_old_a_logps)
-				term1 = ratio * sample_advs
-				clipped_ratio = torch.clamp(ratio, 1 - self.clip_val, 1 + self.clip_val)
-				term2 = clipped_ratio * sample_advs
-				min_terms = torch.min(term1, term2)
-				pg_loss = -min_terms.mean() - beta*sample_ents.mean()#
+				'''
+				pg_loss  = ...
+				'''
+
 				#Train actor
 				self.opt_actor.zero_grad()
 				pg_loss.backward()
