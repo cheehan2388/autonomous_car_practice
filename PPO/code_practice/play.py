@@ -29,7 +29,7 @@ def main():
 	#----------------------------
 	if os.path.exists(os.path.join(save_dir, "model.pt")):
 		print("Loading the model ... ", end="")
-		checkpoint = torch.load(os.path.join(save_dir, "model.pt"))
+		checkpoint = torch.load(os.path.join(save_dir, "model-09500.pt"), map_location=torch.device('cpu'))
 		policy_net.load_state_dict(checkpoint["PolicyNet"])
 		print("Done.")
 	else:

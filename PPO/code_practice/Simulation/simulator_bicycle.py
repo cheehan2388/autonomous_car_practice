@@ -10,8 +10,8 @@ from Simulation.kinematic_bicycle import KinematicModelBicycle as KinematicModel
 
 class SimulatorBicycle(Simulator):
     def __init__(self,
-            v_range = 20.0,
-            a_range = 20.,
+            v_range = 5.0,
+            a_range = 10.,
             delta_range = 45.0,
             l = 30,     # distance between rear and front wheel
             d = 8,     # Wheel Distance

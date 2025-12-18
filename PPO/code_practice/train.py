@@ -22,7 +22,7 @@ def main():
 	clip_val       = 0.2
 	lr             = 1e-4
 	n_iter         = 10000
-	device         = 'cuda'
+	device         = 'cpu'
 
 	#Parameters that are fixed
 	#----------------------------
